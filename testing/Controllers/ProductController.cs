@@ -65,11 +65,12 @@ namespace testing.Controllers
         // GET: Product/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
+                if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Product product = db.products.Find(id);
+
             if (product == null)
             {
                 return HttpNotFound();
@@ -82,10 +83,13 @@ namespace testing.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,name,price,image,description,category_id")] Product product)
+        public ActionResult Edit(Product product,HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {
+                string path = Path.Combine(Server.MapPath("~/Uploads"), upload.FileName);
+                upload.SaveAs(path);
+                product.Image = upload.FileName;
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
