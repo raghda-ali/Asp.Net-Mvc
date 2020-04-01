@@ -18,7 +18,7 @@ namespace testing.Controllers
         // GET: Product
         public ActionResult Index()
         {
-           // return View(db.products.ToList());
+            // return View(db.products.ToList());
             var Products = GetProducts();
             return View(Products);
         }
