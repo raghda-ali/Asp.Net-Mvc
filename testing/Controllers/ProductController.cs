@@ -18,9 +18,15 @@ namespace testing.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            return View(db.products.ToList());
+           // return View(db.products.ToList());
+            var Products = GetProducts();
+            return View(Products);
         }
-
+        public IEnumerable<Product> GetProducts()
+        {
+            var Products = db.products.ToList();
+            return Products;
+        }
         // GET: Product/Details/5
         public ActionResult Details(int? id)
         {
@@ -39,6 +45,9 @@ namespace testing.Controllers
         // GET: Product/Create
         public ActionResult Create()
         {
+          /* var product = GetProducts().SingleOrDefault(d => d.id == id);
+            if (product == null)
+                return HttpNotFound();*/
             return View();
         }
 
