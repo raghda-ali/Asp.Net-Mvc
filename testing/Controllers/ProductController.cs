@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using testing.Models;
 using System.IO;
+using testing.ViewModels;
 
 namespace testing.Controllers
 {
@@ -50,10 +51,17 @@ namespace testing.Controllers
         // GET: Product/Create
         public ActionResult Create()
         {
-          /* var product = GetProducts().SingleOrDefault(d => d.id == id);
-            if (product == null)
-                return HttpNotFound();*/
-            return View();
+            /* var product = GetProducts().SingleOrDefault(d => d.id == id);
+              if (product == null)
+                  return HttpNotFound();*/
+            var Categories = db.categories.ToList();
+            ProductCategoryViewModel pcvm = new ProductCategoryViewModel
+            {
+                Categories = Categories
+
+            };
+                
+            return View(pcvm);
         }
 
         // POST: Product/Create
