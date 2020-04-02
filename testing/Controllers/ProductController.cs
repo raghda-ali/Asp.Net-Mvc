@@ -56,10 +56,7 @@ namespace testing.Controllers
                   return HttpNotFound();*/
             var Categories = db.categories.ToList();
             ProductCategoryViewModel pcvm = new ProductCategoryViewModel
-            {
-                Categories = Categories
-
-            };
+            {Categories = Categories};
                 
             return View(pcvm);
         }
@@ -87,7 +84,10 @@ namespace testing.Controllers
         // GET: Product/Edit/5 
         public ActionResult Edit(int? id)
         {
-                if (id == null)
+            var Categories = db.categories.ToList();
+            ProductCategoryViewModel pcvm = new ProductCategoryViewModel
+            { Categories = Categories };
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -97,7 +97,7 @@ namespace testing.Controllers
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View(pcvm);
         }
 
         // POST: Product/Edit/5
