@@ -4,12 +4,15 @@
     ViewBag.Title = "Product";
 }
 
-<h2>Index</h2>
+<h2>Product</h2>
 @using (Html.BeginForm("Index", "Product", FormMethod.Get))
 {
     <input value="Filter" type="submit" />
     @Html.TextBox("searching")
 }
+
+@Html.ActionLink("ADD", "create") 
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -25,11 +28,11 @@
             @Html.DisplayNameFor(model => model.Image)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>*@
+                @Html.DisplayNameFor(model => model.Description)
+            </th>*@
         @*<th>
-            @Html.DisplayNameFor(model => model.category_id)
-        </th>*@
+                @Html.DisplayNameFor(model => model.category_id)
+            </th>*@
         <th></th>
     </tr>
 
@@ -46,16 +49,16 @@
                 @Html.DisplayFor(modelItem => item.Image)
             </td>
             @*<td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.category_id)
-            </td>*@
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.id })
-            </td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.category_id)
+                </td>*@
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>*@
         </tr>
     }
 
