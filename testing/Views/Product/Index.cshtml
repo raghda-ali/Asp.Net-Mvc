@@ -1,15 +1,18 @@
 ﻿@model IEnumerable<testing.Models.Product>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Product";
 }
 
-<h2>Index</h2>
-@using (Html.BeginForm("Index","Product",FormMethod.Get))
+<h2>Product</h2>
+@using (Html.BeginForm("Index", "Product", FormMethod.Get))
 {
-    @Html.TextBox("Filter")
-    <input type="submit" value="submit"/>
+    <input value="Filter" type="submit" />
+    @Html.TextBox("searching")
 }
+
+@Html.ActionLink("ADD", "create") 
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -24,38 +27,39 @@
         <th>
             @Html.DisplayNameFor(model => model.Image)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.category_id)
-        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>*@
+        @*<th>
+                @Html.DisplayNameFor(model => model.category_id)
+            </th>*@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Image)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.category_id)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.category_id)
+                </td>*@
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>*@
+        </tr>
+    }
 
 </table>
