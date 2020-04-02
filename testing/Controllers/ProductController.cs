@@ -84,7 +84,7 @@ namespace testing.Controllers
             return View(product);
         }
 
-        // GET: Product/Edit/5
+        // GET: Product/Edit/5 
         public ActionResult Edit(int? id)
         {
                 if (id == null)
