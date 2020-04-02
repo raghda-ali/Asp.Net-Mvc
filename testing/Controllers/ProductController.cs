@@ -16,11 +16,16 @@ namespace testing.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Product
-        public ActionResult Index()
+        public ActionResult Index(string searching)
         {
             // return View(db.products.ToList());
-            var Products = GetProducts();
-            return View(Products);
+            var Products = from s in db.products
+                           select s;
+            if (!String.IsNullOrEmpty(searching))
+            {
+                Products = Products.Where(s => s.category_id.Contains(searching));
+            }
+            return View(Products.ToList());
         }
         public IEnumerable<Product> GetProducts()
         {
