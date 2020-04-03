@@ -1,4 +1,5 @@
-﻿@model testing.Models.Product
+﻿
+@model testing.Models.Product
 
 @{
     ViewBag.Title = "Details";
@@ -9,55 +10,48 @@
 <div>
     <h4>Product</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <div class="dl-horizontal">
 
-
-        <td style="background-color:lightblue">
-            @Html.DisplayFor(model => model.Name)
-        </td>
-        @*<p style="float: left;">-</p>*@
-        <td style="background-color:lightblue">
-            @Html.DisplayFor(model => model.Price)
-        </td>
-        <td style="background-color:lightblue">
-            @Html.DisplayFor(model => model.category_id)
-        </td>
-
-
-        <dd>
-            @*@Html.DisplayFor(model => model.Image)*@
-            <img src="@Url.Content("~/Uploads/"+Model.Image)" width="300" height="250" />
+        @*<div style="overflow: hidden;
+            background-color:lightblue">*@
+        <dd style="float: left;
+                 background-color:lightblue;
+                 margin-bottom:200px;
+                 text-align:center;
+                padding:10px;">
+            @Html.DisplayFor(model => model.Name)-
+            @Html.DisplayFor(model => model.Price) EGP(
+            @Html.DisplayFor(model => model.category_id) )
         </dd>
+    </div>
+    <div>
+        @*<dd>*@
+        @*@Html.DisplayFor(model => model.Image)*@
+        <img src="@Url.Content("~/Uploads/"+Model.Image)" width="300" height="200" class="center" top=100px margin=25px10px display=inline-block />
+        @*</dd>*@
+    </div>
+    <div>
+        @*<dd>*@
+        @Html.DisplayFor(model => model.Description)
+        @*</dd>*@
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+    @*<div style="overflow: hidden;>*@
+
+    @Html.ActionLink("Update", "Edit", "Product", new { @class = "btn btn-primary" })
+    @Html.ActionLink("Delete", "Delete", "Product", new { @class = "btn btn-primary" })
 
 
-        <button style="background-color:green;float: left;" type="button" onclick="alert('forbidden')">UPDATE</button>
-        <button style="background-color:red;" type="button" onclick="alert('forbidden')">DELETE</button>
-        @*@Html.ActionLink("Update", "Edit", "Product", new { @class = "btn btn-primary" })
-        @Html.ActionLink("Delete", "Delete", "Product", new { @class = "btn btn-primary" })*@
+    @*</div>*@
 
 
-
-
-
-    </dl>
+    @*</dl>*@
 </div>
 
 <p>
     @*@Html.ActionLink("Edit", "Edit", new { id = Model.id }) |*@
     @Html.ActionLink("Back to List", "Index")
 </p>
-
-
-
-
-
-
-
-
 
 
 
