@@ -11,33 +11,37 @@
     <hr />
     <dl class="dl-horizontal">
 
-        
-            <td style="background-color:lightblue">
-                @Html.DisplayFor(model => model.Name)
-            </td>
-            @*<p style="float: left;">-</p>*@
-            <td style="background-color:lightblue">
-                @Html.DisplayFor(model => model.Price)
-            </td>
-            <td style="background-color:lightblue">
-                @Html.DisplayFor(model => model.category_id)
-            </td>
-        
-        
-            <dd>
-                @*@Html.DisplayFor(model => model.Image)*@
-                <img src="@Url.Content("~/Uploads/"+Model.Image)"width="300" height="250" />
-            </dd>
-       
-            <dd>
-                @Html.DisplayFor(model => model.Description)
-            </dd>
-        
-        
-            <button style="background-color:green;float: left;" type="button" onclick="alert('forbidden')">UPDATE</button>
-            <button style="background-color:red;" type="button" onclick="alert('forbidden')">DELETE</button>
 
-       
+        <td style="background-color:lightblue">
+            @Html.DisplayFor(model => model.Name)
+        </td>
+        @*<p style="float: left;">-</p>*@
+        <td style="background-color:lightblue">
+            @Html.DisplayFor(model => model.Price)
+        </td>
+        <td style="background-color:lightblue">
+            @Html.DisplayFor(model => model.category_id)
+        </td>
+
+
+        <dd>
+            @*@Html.DisplayFor(model => model.Image)*@
+            <img src="@Url.Content("~/Uploads/"+Model.Image)" width="300" height="250" />
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+
+        <button style="background-color:green;float: left;" type="button" onclick="alert('forbidden')">UPDATE</button>
+        <button style="background-color:red;" type="button" onclick="alert('forbidden')">DELETE</button>
+        @*@Html.ActionLink("Update", "Edit", "Product", new { @class = "btn btn-primary" })
+        @Html.ActionLink("Delete", "Delete", "Product", new { @class = "btn btn-primary" })*@
+
+
+
+
 
     </dl>
 </div>
