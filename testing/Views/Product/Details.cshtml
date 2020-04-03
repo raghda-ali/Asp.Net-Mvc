@@ -12,14 +12,18 @@
     <dl class="dl-horizontal">
 
         
-            <td style="background-color:lightblue">
+            <td style="background-color:lightblue;
+                float:center">
+
                 @Html.DisplayFor(model => model.Name)
             </td>
             @*<p style="float: left;">-</p>*@
-            <td style="background-color:lightblue">
+            <td style="background-color:lightblue;
+               float:center">
                 @Html.DisplayFor(model => model.Price)
             </td>
-            <td style="background-color:lightblue">
+            <td style="background-color:lightblue
+                float:center">
                 @Html.DisplayFor(model => model.category_id)
             </td>
         
@@ -34,8 +38,8 @@
             </dd>
         
         
-            <button style="background-color:green;float: left;" type="button" onclick="alert('forbidden')">UPDATE</button>
-            <button style="background-color:red;" type="button" onclick="alert('forbidden')">DELETE</button>
+            <button style="background-color:green; float: center;" type="button" onclick="alert('forbidden')">UPDATE</button>
+            <button style="background-color:red;float: center;" type="button" onclick="alert('forbidden')">DELETE</button>
 
        
 
