@@ -11,34 +11,36 @@
     <hr />
     <dl class="dl-horizontal">
 
-        
-            <dt style="float: left;background-color:lightblue">
+        <div style="overflow: hidden;
+             background-color:lightblue">
+            <dd style="float: left;">
                 @Html.DisplayFor(model => model.Name)
-                <p style="float: left; background-color:lightblue">-</p>
-            </dt>
-            @*<p style="float: left; background-color:lightblue">-</p>*@
-            <dt style="float: left; background-color:lightblue">
+            </dd>
+            <p style="float: left;">-</p>
+            <dd style="float: left;">
                 @Html.DisplayFor(model => model.Price)
-            </dt>
-            <dt style="float: left; background-color:lightblue">
+            </dd>
+            <dd style="float: left;">
                 @Html.DisplayFor(model => model.category_id)
-            </dt>
-        
-        
+            </dd>
+        </div>
+        <div>
             <dd>
                 @Html.DisplayFor(model => model.Image)
-                @*<img src="@Url.Content(model.Image)" width=100 height="100" />*@
+                @*<img src="=@Url.Content(model.Image)" width=100 height="100" />*@
             </dd>
+        </div>
+        <div>
 
             <dd>
                 @Html.DisplayFor(model => model.Description)
             </dd>
-        
-        
+        </div>
+        <div style="overflow: hidden;">
             <button style="background-color:green;float: left;" type="button" onclick="alert('forbidden')">UPDATE</button>
             <button style="background-color:red;" type="button" onclick="alert('forbidden')">DELETE</button>
 
-            
+            </div>
 
     </dl>
 </div>
