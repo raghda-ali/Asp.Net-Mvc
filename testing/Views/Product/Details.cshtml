@@ -11,11 +11,9 @@
     <hr />
     <dl class="dl-horizontal">
 
-        <div style="overflow:hidden";
-             background-color:lightblue >
-
-            <dd style="float:left">
-
+        <div style="overflow: hidden;
+             background-color:lightblue">
+            <dd style="float:left;">
                 @Html.DisplayFor(model => model.Name)
             </dd>
             @*<p style="float: left;">-</p>*@
@@ -27,19 +25,22 @@
             </dd>
         
         </div>
+        <div>
             <dd>
                 @*@Html.DisplayFor(model => model.Image)*@
                 <img src="@Url.Content("~/Uploads/"+Model.Image)"width="300" height="200" />
             </dd>
-       
+         </div>
+        <div>
             <dd>
                 @Html.DisplayFor(model => model.Description)
             </dd>
+        </div>
         
-        
+        <div style="overflow: hidden;>
             <button style="background-color:green; float: center;" type="button" onclick="alert('forbidden')">UPDATE</button>
-            <button style="background-color:red;float: center;" type="button" onclick="alert('forbidden')">DELETE</button>
-
+            <button style="background-color:red; float: center;" type="button" onclick="alert('forbidden')">DELETE</button>
+         </div>
        
 
     </dl>
