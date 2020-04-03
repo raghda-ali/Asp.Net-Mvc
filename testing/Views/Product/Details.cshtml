@@ -26,8 +26,8 @@
         </div>
         <div>
             <dd>
-                @Html.DisplayFor(model => model.Image)
-                @*<img src="=@Url.Content(model.Image)" width=100 height="100" />*@
+                @*@Html.DisplayFor(model => model.Image)*@
+                <img src="@Url.Content("~/Uploads/"+Model.Image)"width="300" height="200" />
             </dd>
         </div>
         <div>
