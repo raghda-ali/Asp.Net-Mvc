@@ -14,7 +14,7 @@ namespace testing.Models
         public string Image { get; set; }
         public string Description { get; set; }
         [DisplayName("Category")]
-        public string category_id { get; set; }
+        public int category_id { get; set; }
 
     }
 }
