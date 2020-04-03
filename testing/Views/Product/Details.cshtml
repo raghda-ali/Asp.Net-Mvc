@@ -11,23 +11,22 @@
     <hr />
     <dl class="dl-horizontal">
 
-        
-            <td style="background-color:lightblue;
-                float:center">
+        <div style="overflow:hidden";
+             background-color:lightblue >
+
+            <dd style="float:left">
 
                 @Html.DisplayFor(model => model.Name)
-            </td>
+            </dd>
             @*<p style="float: left;">-</p>*@
-            <td style="background-color:lightblue;
-               float:center">
+            <dd style="float:left;">
                 @Html.DisplayFor(model => model.Price)
-            </td>
-            <td style="background-color:lightblue
-                float:center">
+            </dd>
+            <dd style="float:left;">
                 @Html.DisplayFor(model => model.category_id)
-            </td>
+            </dd>
         
-        
+        </div>
             <dd>
                 @*@Html.DisplayFor(model => model.Image)*@
                 <img src="@Url.Content("~/Uploads/"+Model.Image)"width="300" height="200" />
