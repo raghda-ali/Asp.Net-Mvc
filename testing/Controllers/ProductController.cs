@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using testing.Models;
 using System.IO;
+using testing.ViewModels;
 
 namespace testing.Controllers
 {
@@ -50,10 +51,14 @@ namespace testing.Controllers
         // GET: Product/Create
         public ActionResult Create()
         {
-          /* var product = GetProducts().SingleOrDefault(d => d.id == id);
-            if (product == null)
-                return HttpNotFound();*/
-            return View();
+            /* var product = GetProducts().SingleOrDefault(d => d.id == id);
+              if (product == null)
+                  return HttpNotFound();*/
+            var Categories = db.categories.ToList();
+            ProductCategoryViewModel pcvm = new ProductCategoryViewModel
+            {Categories = Categories};
+                
+            return View(pcvm);
         }
 
         // POST: Product/Create
@@ -76,10 +81,13 @@ namespace testing.Controllers
             return View(product);
         }
 
-        // GET: Product/Edit/5
+        // GET: Product/Edit/5 
         public ActionResult Edit(int? id)
         {
-                if (id == null)
+            var Categories = db.categories.ToList();
+            ProductCategoryViewModel pcvm = new ProductCategoryViewModel
+            { Categories = Categories };
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -89,7 +97,7 @@ namespace testing.Controllers
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View(pcvm);
         }
 
         // POST: Product/Edit/5
