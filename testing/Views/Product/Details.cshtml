@@ -24,45 +24,45 @@
             @Html.DisplayFor(model => model.Price) EGP(
             @Html.DisplayFor(model => model.category_id) )
         </dd>
-    
+
         <br />
 
-    <div style="margin-top:auto;
+        <div style="margin-top:auto;
                   /*padding-top:2px;*/
                   margin-left:400px;
                   margin-bottom:30px;">
-        
-        <img src="@Url.Content("~/Uploads/"+Model.Image)" width="300" height="200" class="center" top=100px margin=25px10px display=inline-block />
-      
-    </div>
-    
-       <dd style="margin-left:320px;
+
+            <img src="@Url.Content("~/Uploads/"+Model.Image)" width="300" height="200" class="center" top=100px margin=25px10px display=inline-block />
+
+        </div>
+
+        <dd style="margin-left:320px;
                  margin-right:350px;
                  text-align:center">
-        @Html.DisplayFor(model => model.Description)
+            @Html.DisplayFor(model => model.Description)
         </dd>
-    
 
-    <div style="overflow: hidden;
+
+        <div style="overflow: hidden;
              margin-left:320px;
                  margin-right:350px;
                  text-align:center;
                   margin-top:30px;">
 
-    @Html.ActionLink("Update", "Edit", "Product", new { @class = "btn btn-primary" })
-    @Html.ActionLink("Delete", "Delete", "Product", new { @class = "btn btn-primary" })
+            @Html.ActionLink("Update", "Edit", "Product", new { @class = "btn btn-primary" })
+            @Html.ActionLink("Delete", "Delete", "Product", new { @class = "btn btn-primary" })
 
 
+        </div>
+
+
+        @*</dl>*@
     </div>
 
-
-    @*</dl>*@
-</div>
-
-<p style="margin-top:30px;">
-    @*@Html.ActionLink("Edit", "Edit", new { id = Model.id }) |*@
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <p style="margin-top:30px;">
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.id }) |*@
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 
 
 
