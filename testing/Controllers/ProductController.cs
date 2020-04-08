@@ -19,7 +19,9 @@ namespace testing.Controllers
         // GET: Product
         public ActionResult Index(string searching)
         {
-            // return View(db.products.ToList());
+
+            //    return View(db.products.ToList());
+            //}
             var Products = from s in db.products
                            select s;
             if (!String.IsNullOrEmpty(searching))
@@ -51,13 +53,13 @@ namespace testing.Controllers
         // GET: Product/Create
         public ActionResult Create()
         {
-            /* var product = GetProducts().SingleOrDefault(d => d.id == id);
-              if (product == null)
-                  return HttpNotFound();*/
+            //var product = GetProducts().SingleOrDefault(d => d.id == id);
+            //if (product == null)
+            //    return HttpNotFound();
             var Categories = db.categories.ToList();
             ProductCategoryViewModel pcvm = new ProductCategoryViewModel
-            {Categories = Categories};
-                
+            { Categories = Categories };
+
             return View(pcvm);
         }
 

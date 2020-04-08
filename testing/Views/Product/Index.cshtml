@@ -32,7 +32,10 @@
             <div class="col-md-3" style="margin-bottom:25px">
                 <div class="thumbnail">
                     <div class="image">
-                        <img class="img-responsive" src="~/Uploads/@item.Image" height="350" width="240" />
+                        <a href='@Url.Action("Details", "Product")'>
+
+                            <img class="img-responsive" src="~/Uploads/@item.Image" height="350" width="240" />
+                        </a>
                     </div>
                     <div class="caption" style="border-top:3px solid #808080">
                         <h3><a href="#">@item.Name</a></h3>

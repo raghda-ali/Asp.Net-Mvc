@@ -179,10 +179,6 @@
     <Compile Include="Migrations\202004011430050_InitialMigration.Designer.cs">
       <DependentUpon>202004011430050_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004011603431_AddCategory.cs" />
-    <Compile Include="Migrations\202004011603431_AddCategory.Designer.cs">
-      <DependentUpon>202004011603431_AddCategory.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202004011922173_addnewproduct.cs" />
     <Compile Include="Migrations\202004011922173_addnewproduct.Designer.cs">
       <DependentUpon>202004011922173_addnewproduct.cs</DependentUpon>
@@ -288,9 +284,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202004011430050_InitialMigration.resx">
       <DependentUpon>202004011430050_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004011603431_AddCategory.resx">
-      <DependentUpon>202004011603431_AddCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004011922173_addnewproduct.resx">
       <DependentUpon>202004011922173_addnewproduct.cs</DependentUpon>
