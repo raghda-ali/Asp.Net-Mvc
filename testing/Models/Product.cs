@@ -15,6 +15,6 @@ namespace testing.Models
         public string Description { get; set; }
         [DisplayName("Category")]
         public string category_id { get; set; }
-
+        public Category category { get; set; }
     }
 }

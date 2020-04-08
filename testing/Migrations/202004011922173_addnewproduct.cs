@@ -8,7 +8,7 @@ namespace testing.Migrations
         public override void Up()
         {
             AlterColumn("dbo.Products", "Image", c => c.String());
-            AlterColumn("dbo.Products", "category_id", c => c.String());
+            AlterColumn("dbo.Products", "category_id", c => c.Int());
         }
         
         public override void Down()
